@@ -1,12 +1,14 @@
 import React from 'react';
-import From from 'Components/Form/From';
+import Header from 'Components/Header/Header';
+import BodyList from 'Components/BodyList/BodyList';
 import styled from 'styled-components';
 
 export default function App() {
   return (
     <Container>
+      <Header />
       <Wrap>
-        <From />
+        <BodyList />
       </Wrap>
     </Container>
   );
