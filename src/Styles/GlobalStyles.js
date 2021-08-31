@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 export const GlobalStyles = createGlobalStyle` 
     ${reset}
@@ -22,5 +22,8 @@ export const GlobalStyles = createGlobalStyle`
         background-color: transparent;
         border: none;
         outline: none;
+    }
+    button {
+        cursor: pointer;
     }
 `;

@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 const flexSet = (
   justify = 'center',
   items = 'center',
-  direction = 'row',
+  direction = 'row'
 ) => css`
   display: flex;
   justify-content: ${justify};

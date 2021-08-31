@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-export default function Header() {
+export default function TodoHeader() {
   return (
     <Container>
       <Wrap>
@@ -48,6 +48,7 @@ const LogoBox = styled.div`
 const Logo = styled.div`
   font-size: 30px;
   font-weight: 700;
+  color: #242428;
 `;
 
 const LogoImge = styled.img.attrs({
