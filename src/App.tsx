@@ -1,24 +1,22 @@
 import React from 'react';
-import Header from 'Components/Header/Header';
-import BodyList from 'Components/BodyList/BodyList';
+import TodoHeader from 'Components/TodoHeader/TodoHeader';
+import TodoBody from 'Components/TodoBody/TodoBody';
 import styled from 'styled-components';
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <Container>
-      <Header />
-      <Wrap>
-        <BodyList />
-      </Wrap>
+      <TodoHeader />
+      <TodoBody />
     </Container>
   );
-}
+};
+
+export default App;
 
 const Container = styled.div`
-  ${({ theme }) => theme.flexSet()};
+  ${({ theme }) => theme.flexSet('', '', 'column')};
   width: 100%;
-`;
-
-const Wrap = styled.div`
-  width: 900px;
+  height: 100vh;
+  background-color: #f5f5f7;
 `;
