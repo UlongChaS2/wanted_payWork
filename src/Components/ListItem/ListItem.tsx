@@ -21,8 +21,8 @@ export default function ListItem() {
           <TrashIcon />
         </DeleteButton>
         <ButtonBox>
-          <ConformButton>확인</ConformButton>
-          <CancleButton>취소</CancleButton>
+          <ConformButton></ConformButton>
+          <CancleButton></CancleButton>
         </ButtonBox>
       </Wrap>
     </Container>
