@@ -8,11 +8,10 @@ import styled from 'styled-components';
 export default function TodoList() {
   const dispatch = useDispatch();
 
-  const tasks = useSelector<RootState, tasks>((state) => state.serviceTasks);
-  console.log(tasks);
+  const taskList = useSelector<RootState, tasks>((state) => state.serviceTasks);
   return (
     <Container>
-      {tasks.map((task) => (
+      {taskList.list.map((task) => (
         <TodoItem task={task} />
       ))}
     </Container>

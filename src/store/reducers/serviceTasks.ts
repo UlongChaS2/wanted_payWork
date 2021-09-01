@@ -2,22 +2,25 @@ import { Reducer, AnyAction } from 'redux';
 import { ADD_TASK } from '../actions/types';
 import { tasks } from 'types';
 
-const initialState: tasks = [];
+const initialState: tasks = {
+  list: [],
+};
 
-const serviceTasks: Reducer<tasks, AnyAction> = (
-  state = initialState,
-  action
-) => {
+const serviceTasks = (state = initialState, action: AnyAction): tasks => {
   switch (action.type) {
     case ADD_TASK:
       const newId =
-        Math.max(0, ...initialState.map((todo) => Number(todo.id))) + 1;
+        Math.max(0, ...initialState.list.map((todo) => Number(todo.id))) + 1;
       return {
-        ...state,
-        id: `${newId}`,
-        content: action.payload,
-        isCheck: false,
-        createdAt: new Date().toISOString(),
+        list: [
+          ...state.list,
+          {
+            id: `${newId}`,
+            content: action.payload,
+            isCheck: false,
+            createdAt: new Date(),
+          },
+        ],
       };
 
     default:

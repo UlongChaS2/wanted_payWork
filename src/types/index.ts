@@ -1,15 +1,8 @@
 export type task = {
-  id: number;
-  task: string;
-  status: string;
-  importance: string;
-  isCheck: true;
+  id: string;
+  content: string;
+  isCheck: boolean;
   createdAt: Date;
 };
 
-export type tasks = task[];
-
-export type createTask = {
-  task: string;
-  importance: string;
-};
+export type tasks = { list: task[] };

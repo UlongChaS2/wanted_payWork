@@ -9,10 +9,9 @@ interface TodoItemProps {
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({ task }) => {
-  console.log(task);
   return (
     <Container>
-      <Text>Task1</Text>
+      <Text>{task.content}</Text>
       <ButtonBox>
         <ModifyButton>
           <EditIcon />
