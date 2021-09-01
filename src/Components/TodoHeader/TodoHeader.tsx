@@ -5,24 +5,10 @@ export default function TodoHeader() {
   return (
     <Container>
       <Wrap>
-        <LogoBox>
-          <Logo>
-            <LogoImge />
-            <p>paywork's</p>
-            <p>Todo List</p>
-          </Logo>
-          <SubTitle>
-            <p>작업은 정확히 💼</p>
-            <p>목표는 칼같이 🤙</p>
-          </SubTitle>
-        </LogoBox>
-        <DateWrap>
-          <div>
-            <Date>2010.08.31</Date>
-            <Clock>09:12 PM</Clock>
-          </div>
-          <Weather>☃️</Weather>
-        </DateWrap>
+        <Logo>
+          <LogoImge src='https://paywork.io/images/logo-dark.png' />
+          <p>'s Todo List</p>
+        </Logo>
       </Wrap>
     </Container>
   );
@@ -31,50 +17,35 @@ export default function TodoHeader() {
 const Container = styled.div`
   ${({ theme }) => theme.flexSet()};
   width: 100%;
-  padding: 10px;
+  padding: 20px 0;
   background-color: #fff;
   box-shadow: 0px 2px 5px #e4e4e4;
 `;
 
 const Wrap = styled.div`
-  ${({ theme }) => theme.flexSet('space-between')};
+  ${({ theme }) => theme.flexSet('flex-start')};
   width: 700px;
 `;
 
-const LogoBox = styled.div`
-  ${({ theme }) => theme.flexSet('', 'flex-end')};
-`;
-
 const Logo = styled.div`
+  ${({ theme }) => theme.flexSet()};
   font-size: 30px;
   font-weight: 700;
-  color: #242428;
+  color: #202040;
 `;
 
 const LogoImge = styled.img.attrs({
   alt: `paywork's Todo List Logo`,
 })`
-  display: none;
+  width: 140px;
 `;
 
 const SubTitle = styled.div`
   ${({ theme }) => theme.flexSet('', 'flex-end', 'column')};
   margin-left: 10px;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
   p {
     margin-bottom: 4px;
   }
-`;
-
-const DateWrap = styled.div`
-  ${({ theme }) => theme.flexSet()}
-`;
-
-const Date = styled.div``;
-
-const Clock = styled.div``;
-
-const Weather = styled.div`
-  font-size: 30px;
-  margin-left: 10px;
 `;

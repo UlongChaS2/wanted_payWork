@@ -16,7 +16,7 @@ export default function TodoBody() {
 
 const Container = styled.div`
   ${({ theme }) => theme.flexSet()};
-  padding: 40px 0;
+  padding-top: 20px;
 `;
 
 const Wrap = styled.div`
