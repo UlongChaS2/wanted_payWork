@@ -14,7 +14,7 @@ export default function TodoCreate() {
     setInputValue(e.target.value);
   };
 
-  const submitTask = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleAddTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newId =
@@ -26,7 +26,7 @@ export default function TodoCreate() {
   };
 
   return (
-    <Container onSubmit={(e) => submitTask(e)}>
+    <Container onSubmit={(e) => handleAddTask(e)}>
       <TaskInput value={inputValue} onChange={(e) => handleInputValue(e)} />
       <AddButton type='submit'>추가</AddButton>
     </Container>

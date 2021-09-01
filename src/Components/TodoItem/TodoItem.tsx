@@ -1,14 +1,21 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { task } from 'types';
+import { removeTask } from 'store/actions/serviceTasks';
 import EditIcon from 'assets/icon/EditIcon';
 import TrashIcon from 'assets/icon/TrashIcon';
 import styled from 'styled-components/macro';
-import { task } from 'types';
 
 interface TodoItemProps {
   task: task;
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({ task }) => {
+  const dispatch = useDispatch();
+
+  const handleRemoveTask = (id: string) => {
+    dispatch(removeTask(id));
+  };
   return (
     <Container>
       <Text>{task.content}</Text>
@@ -16,7 +23,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ task }) => {
         <ModifyButton>
           <EditIcon />
         </ModifyButton>
-        <DeleteButton>
+        <DeleteButton onClick={() => handleRemoveTask(task.id)}>
           <TrashIcon />
         </DeleteButton>
       </ButtonBox>

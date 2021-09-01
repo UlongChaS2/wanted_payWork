@@ -1,7 +1,6 @@
-import { Reducer, AnyAction } from 'redux';
+import { AnyAction } from 'redux';
 import { ADD_TASK, REMOVE_TASK } from '../actions/types';
 import { tasks } from 'types';
-// import { initialState } from 'utils/constants';
 
 const initialState: tasks = {
   list: [],
@@ -20,6 +19,11 @@ const serviceTasks = (state = initialState, action: AnyAction): tasks => {
             createdAt: new Date().toISOString(),
           },
         ],
+      };
+    case REMOVE_TASK:
+      return {
+        ...state,
+        list: state.list.filter((todo) => todo.id !== action.payload),
       };
 
     default:
