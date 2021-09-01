@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoItem from 'Components/TodoItem/TodoItem';
+import TodoItem from 'components/TodoItem/TodoItem';
 import styled from 'styled-components';
 
 export default function TodoList() {

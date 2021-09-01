@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import mixin from 'Styles/mixin';
-import { GlobalStyles } from 'Styles/GlobalStyles';
+import mixin from 'styles/mixin';
+import { GlobalStyles } from 'styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 
 ReactDOM.render(
@@ -12,5 +12,5 @@ ReactDOM.render(
       <App />
     </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );

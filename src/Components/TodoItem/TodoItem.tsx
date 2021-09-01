@@ -1,6 +1,6 @@
 import React from 'react';
-import EditIcon from 'Assets/Icon/EditIcon';
-import TrashIcon from 'Assets/Icon/TrashIcon';
+import EditIcon from 'assets/icon/EditIcon';
+import TrashIcon from 'assets/icon/TrashIcon';
 import styled from 'styled-components/macro';
 
 export default function TodoItem() {
