@@ -1,6 +1,7 @@
 import { AnyAction } from 'redux';
-import { ADD_TASK, REMOVE_TASK } from '../actions/types';
+import { ADD_TASK, EDIT_TASK, REMOVE_TASK } from '../actions/types';
 import { tasks } from 'types';
+import { takeLatest } from 'typed-redux-saga/dist';
 
 const initialState: tasks = {
   list: [],
@@ -22,8 +23,16 @@ const serviceTasks = (state = initialState, action: AnyAction): tasks => {
       };
     case REMOVE_TASK:
       return {
+        list: state.list.filter((task) => task.id !== action.payload),
+      };
+    case EDIT_TASK:
+      return {
         ...state,
-        list: state.list.filter((todo) => todo.id !== action.payload),
+        list: state.list.map((task) =>
+          task.id === action.payload.id
+            ? { ...task, content: action.payload.content }
+            : task
+        ),
       };
 
     default:
