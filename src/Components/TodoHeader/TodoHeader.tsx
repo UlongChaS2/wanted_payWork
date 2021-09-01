@@ -38,7 +38,7 @@ const Container = styled.div`
 
 const Wrap = styled.div`
   ${({ theme }) => theme.flexSet('space-between')};
-  width: 900px;
+  width: 700px;
 `;
 
 const LogoBox = styled.div`

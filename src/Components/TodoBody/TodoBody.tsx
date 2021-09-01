@@ -20,5 +20,5 @@ const Container = styled.div`
 `;
 
 const Wrap = styled.div`
-  width: 900px;
+  width: 700px;
 `;
