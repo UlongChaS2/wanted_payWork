@@ -1,6 +1,6 @@
 import React from 'react';
-import TodoCreate from 'components/TodoCreate/TodoCreate';
-import TodoList from 'components/TodoList/TodoList';
+import TodoCreate from 'components/TodoCreate';
+import TodoList from 'components/TodoList';
 import styled from 'styled-components';
 
 export default function TodoBody() {
