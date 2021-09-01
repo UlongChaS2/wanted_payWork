@@ -24,7 +24,6 @@ export default function TodoCreate() {
     dispatch(addTask(inputValue, newId.toString()));
     setInputValue('');
   };
-
   return (
     <Container onSubmit={(e) => handleAddTask(e)}>
       <TaskInput value={inputValue} onChange={(e) => handleInputValue(e)} />
