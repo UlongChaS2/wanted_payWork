@@ -1,1 +1,1 @@
-export const TIME_ZONE = 'ko-KR';
+export const BASE_URL = 'http://dummy-server.io/';
