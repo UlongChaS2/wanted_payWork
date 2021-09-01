@@ -1,11 +1,19 @@
 import React from 'react';
-import TodoItem from 'Components/TodoItem/TodoItem';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from 'store/reducers';
+import { tasks } from 'types';
+import TodoItem from 'components/TodoItem';
 import styled from 'styled-components';
 
 export default function TodoList() {
+  const dispatch = useDispatch();
+
+  const taskList = useSelector<RootState, tasks>((state) => state.serviceTasks);
   return (
     <Container>
-      <TodoItem />
+      {taskList.list.map((task) => (
+        <TodoItem task={task} />
+      ))}
     </Container>
   );
 }

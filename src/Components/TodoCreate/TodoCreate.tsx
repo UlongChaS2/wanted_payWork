@@ -1,27 +1,33 @@
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
+import { useDispatch } from 'react-redux';
+import { addTask } from 'store/actions/serviceTasks';
 import styled from 'styled-components/macro';
-import 'react-datepicker/dist/react-datepicker.css';
 
 export default function TodoCreate() {
-  const [startDate, setStartDate] = useState<Date>(new Date());
+  const dispatch = useDispatch();
+  const [inputValue, setInputValue] = useState<string>('');
+
+  const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+  const submitTask = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!inputValue) return;
+    dispatch(addTask(inputValue));
+    setInputValue('');
+  };
 
   return (
-    <Container>
-      <TaskInput />
-      <DatePickerWrap>
-        <DatePickerStyle
-          selected={startDate}
-          onChange={(date: Date) => setStartDate(date)}
-        />
-      </DatePickerWrap>
-      <ImportanceSelect />
-      <AddButton>추가</AddButton>
+    <Container onSubmit={(e) => submitTask(e)}>
+      <TaskInput onChange={(e) => handleInputValue(e)} />
+      <AddButton type='submit'>추가</AddButton>
     </Container>
   );
 }
 
-const Container = styled.div`
+const Container = styled.form`
   ${({ theme }) => theme.flexSet()};
   width: 100%;
   padding: 20px;
@@ -33,45 +39,21 @@ const Container = styled.div`
 
 const TaskInput = styled.input.attrs({
   type: 'text',
+  placeholder: '계획한 목표를 적어주세요 📝🤙',
 })`
-  flex: 4;
-  padding: 8px 0 8px 10px;
+  flex: 3;
+  padding: 10px 0 8px 10px;
   border: 1px solid #e4e4e4;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 500;
 `;
 
-const DatePickerWrap = styled.div`
-  flex: 1;
-`;
-
-const DatePickerStyle = styled(DatePicker)`
-  width: fit-content;
-  height: 36px;
-  padding-left: 10px;
-  margin: 0 10px;
-  font-size: 14px;
-  border: 1px solid #e4e4e4;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
-    color: green;
-  }
-`;
-
-const ImportanceSelect = styled.select`
-  flex: 1;
-  height: 36px;
-  margin-right: 10px;
-  border: 1px solid #e4e4e4;
-  border-radius: 5px;
-`;
-
 const AddButton = styled.button`
+  flex: 1;
   width: 70px;
   height: 40px;
+  margin-left: 10px;
   font-size: 14px;
   font-weight: 500;
   color: #fff;

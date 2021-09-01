@@ -1,6 +1,6 @@
 import React from 'react';
-import TodoHeader from 'Components/TodoHeader/TodoHeader';
-import TodoBody from 'Components/TodoBody/TodoBody';
+import TodoHeader from 'components/TodoHeader';
+import TodoBody from 'components/TodoBody';
 import styled from 'styled-components';
 
 const App: React.FC = () => {

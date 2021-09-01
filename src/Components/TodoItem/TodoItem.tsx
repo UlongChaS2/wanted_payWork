@@ -1,37 +1,34 @@
 import React from 'react';
-import EditIcon from 'Assets/Icon/EditIcon';
-import TrashIcon from 'Assets/Icon/TrashIcon';
+import EditIcon from 'assets/icon/EditIcon';
+import TrashIcon from 'assets/icon/TrashIcon';
 import styled from 'styled-components/macro';
+import { task } from 'types';
 
-export default function TodoItem() {
+interface TodoItemProps {
+  task: task;
+}
+
+const TodoItem: React.FC<TodoItemProps> = ({ task }) => {
   return (
     <Container>
-      <TaskBox>
-        <ImfortanceBox>
-          <ImfortanceStatus>🔴</ImfortanceStatus>
-        </ImfortanceBox>
-        <Text>Task1</Text>
-      </TaskBox>
-      <Wrap>
-        <StatusBox>
-          <Status>ongoing</Status>
-        </StatusBox>
-        <ButtonBox>
-          <ModifyButton>
-            <EditIcon />
-          </ModifyButton>
-          <DeleteButton>
-            <TrashIcon />
-          </DeleteButton>
-        </ButtonBox>
-      </Wrap>
+      <Text>{task.content}</Text>
+      <ButtonBox>
+        <ModifyButton>
+          <EditIcon />
+        </ModifyButton>
+        <DeleteButton>
+          <TrashIcon />
+        </DeleteButton>
+      </ButtonBox>
     </Container>
   );
-}
+};
+
+export default TodoItem;
 /* min-height: ${({ isModify }) => (isModify ? '110px' : '70px')}; */
 
 const Container = styled.div`
-  ${({ theme }) => theme.flexSet('space-between', '', 'column')};
+  ${({ theme }) => theme.flexSet('space-between')};
   width: 100%;
   height: 65px;
   margin: 10px 0;
@@ -42,45 +39,11 @@ const Container = styled.div`
   transition: 0.3s;
 `;
 
-const ImfortanceStatus = styled.div`
-  margin: 2px 6px 0 0;
-`;
-
-const TaskBox = styled.div`
-  ${({ theme }) => theme.flexSet('flex-start')};
-  height: 100%;
-`;
-
 const Text = styled.div`
   flex: 1;
   font-size: 16px;
   font-weight: 500;
   overflow: hidden;
-`;
-
-const ImfortanceBox = styled.div`
-  ${({ theme }) => theme.flexSet('flex-start')};
-`;
-
-const Wrap = styled.div`
-  ${({ theme }) => theme.flexSet('space-between')};
-  margin-top: 6px;
-`;
-
-const StatusBox = styled.div`
-  ${({ theme }) => theme.flexSet('flex-start')};
-`;
-
-const Status = styled.div`
-  ${({ theme }) => theme.flexSet()};
-  max-width: 80px;
-  padding: 2px 4px 4px;
-  margin-right: 6px;
-  border-radius: 3px;
-  color: rgb(18 110 130);
-  border: 1px solid rgb(18 110 130);
-  transition: 0.2s;
-  opacity: 0.7;
 `;
 
 const ButtonBox = styled.div``;
