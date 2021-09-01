@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store/reducers';
+import { tasks } from 'types';
 import { addTask } from 'store/actions/serviceTasks';
 import styled from 'styled-components/macro';
 
 export default function TodoCreate() {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState<string>('');
+  const taskList = useSelector<RootState, tasks>((state) => state.serviceTasks);
 
   const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -14,14 +17,17 @@ export default function TodoCreate() {
   const submitTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    const newId =
+      Math.max(0, ...taskList.list.map((todo) => Number(todo.id))) + 1;
+
     if (!inputValue) return;
-    dispatch(addTask(inputValue));
+    dispatch(addTask(inputValue, newId.toString()));
     setInputValue('');
   };
 
   return (
     <Container onSubmit={(e) => submitTask(e)}>
-      <TaskInput onChange={(e) => handleInputValue(e)} />
+      <TaskInput value={inputValue} onChange={(e) => handleInputValue(e)} />
       <AddButton type='submit'>추가</AddButton>
     </Container>
   );

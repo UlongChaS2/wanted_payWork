@@ -1,13 +1,11 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from 'store/reducers';
 import { tasks } from 'types';
 import TodoItem from 'components/TodoItem';
 import styled from 'styled-components';
 
 export default function TodoList() {
-  const dispatch = useDispatch();
-
   const taskList = useSelector<RootState, tasks>((state) => state.serviceTasks);
   return (
     <Container>

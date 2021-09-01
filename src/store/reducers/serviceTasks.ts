@@ -1,6 +1,7 @@
 import { Reducer, AnyAction } from 'redux';
-import { ADD_TASK } from '../actions/types';
+import { ADD_TASK, REMOVE_TASK } from '../actions/types';
 import { tasks } from 'types';
+// import { initialState } from 'utils/constants';
 
 const initialState: tasks = {
   list: [],
@@ -9,16 +10,14 @@ const initialState: tasks = {
 const serviceTasks = (state = initialState, action: AnyAction): tasks => {
   switch (action.type) {
     case ADD_TASK:
-      const newId =
-        Math.max(0, ...initialState.list.map((todo) => Number(todo.id))) + 1;
       return {
         list: [
           ...state.list,
           {
-            id: `${newId}`,
-            content: action.payload,
+            id: action.payload.id,
+            content: action.payload.content,
             isCheck: false,
-            createdAt: new Date(),
+            createdAt: new Date().toISOString(),
           },
         ],
       };
