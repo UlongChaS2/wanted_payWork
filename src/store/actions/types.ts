@@ -3,5 +3,3 @@ export const EDIT_TASK = 'edit_task';
 export const REMOVE_TASK = 'remove_task';
 export const START_TASK = 'start_task';
 export const DONE_TASK = 'done_task';
-export const LOAD_TASKS = 'load_tasks';
-export const SAVE_TASKS = 'save_tasks';

@@ -2,7 +2,7 @@ export type task = {
   id: string;
   content: string;
   isCheck: boolean;
-  createdAt: Date;
+  createdAt: string;
 };
 
 export type tasks = { list: task[] };
