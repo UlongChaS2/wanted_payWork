@@ -5,9 +5,7 @@ const TrashIcon: React.FC = () => {
     <svg
       id='Layer_1'
       enableBackground='new 0 0 512 512'
-      height='20'
       viewBox='0 0 512 512'
-      width='20'
       xmlns='http://www.w3.org/2000/svg'
     >
       <g>
