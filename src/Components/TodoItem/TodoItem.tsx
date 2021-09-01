@@ -40,21 +40,11 @@ const Container = styled.div`
   transition: 0.3s;
 `;
 
-const TaskBox = styled.div`
-  ${({ theme }) => theme.flexSet('flex-start')};
-  height: 100%;
-`;
-
 const Text = styled.div`
   flex: 1;
   font-size: 16px;
   font-weight: 500;
   overflow: hidden;
-`;
-
-const Wrap = styled.div`
-  ${({ theme }) => theme.flexSet('space-between')};
-  margin-top: 6px;
 `;
 
 const ButtonBox = styled.div``;

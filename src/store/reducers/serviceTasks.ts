@@ -1,5 +1,5 @@
 import { Reducer, AnyAction } from 'redux';
-import { ADD_TASK, LOAD_TASKS, SAVE_TASKS } from '../actions/types';
+import { ADD_TASK } from '../actions/types';
 import { tasks } from 'types';
 
 const initialState: tasks = [];

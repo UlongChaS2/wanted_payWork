@@ -10,10 +10,10 @@ export default function TodoCreate() {
   const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
-  console.log(inputValue);
 
-  const submitTask = (e: React.FormEvent) => {
+  const submitTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!inputValue) return;
     dispatch(addTask(inputValue));
     setInputValue('');
