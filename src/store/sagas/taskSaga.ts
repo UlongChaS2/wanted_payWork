@@ -12,7 +12,7 @@ import {
 function* addPostRequest() {
   try {
     const response: AxiosResponse = yield call(todoListAPI.post, '/todo', {
-      content: '안녕',
+      content: '',
     });
     console.log(response);
     switch (response.status) {
@@ -29,7 +29,7 @@ function* addPostRequest() {
 function* editPostRequest() {
   try {
     const response: AxiosResponse = yield call(todoListAPI.post, `/todo`, {
-      content: 'string',
+      content: '',
     });
 
     switch (response.status) {
@@ -77,32 +77,24 @@ function* checkPostRequest() {
 
 function* loadGetRequest() {
   try {
-    // const response: AxiosResponse = yield call(todoListAPI.get, '/todo');
-    // switch (response.status) {
-    //   case 200:
-    //     const data = {
-    //       type: LOAD_TASKS,
-    //       payload: response.data.todoList,
-    //     };
-    //     yield put(data);
-    //     console.log(data)
-    // }
-    const { data } = yield call(todoListAPI.get, 'assets/data/dummyData.json');
-    console.log(...data);
-    const list = {
-      type: LOAD_TASKS,
-      payload: data,
-    };
-    yield put(list);
+    const response: AxiosResponse = yield call(todoListAPI.get, '/todo');
+    switch (response.status) {
+      case 200:
+        const data = {
+          type: LOAD_TASKS,
+          payload: response.data.todoList,
+        };
+        yield put(data);
+    }
   } catch (err) {
     console.log(err);
   }
 }
 
 export function* taskSaga(): Generator<StrictEffect> {
-  // yield takeLatest(ADD_TASK, addPostRequest);
-  // yield takeLatest(EDIT_TASK, editPostRequest);
-  // yield takeLatest(REMOVE_TASK, removeDeleteRequest);
-  // yield takeLatest(CHECK_TASK, checkPostRequest);
+  yield takeLatest(ADD_TASK, addPostRequest);
+  yield takeLatest(EDIT_TASK, editPostRequest);
+  yield takeLatest(REMOVE_TASK, removeDeleteRequest);
+  yield takeLatest(CHECK_TASK, checkPostRequest);
   yield takeLatest(LOAD_TASKS, loadGetRequest);
 }

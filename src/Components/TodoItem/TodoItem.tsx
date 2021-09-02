@@ -85,10 +85,10 @@ const Container = styled.div<{ isCheck: boolean }>`
   height: 65px;
   margin: 10px 0;
   padding: 10px 20px;
-  background-color: ${({ isCheck }) => (isCheck ? '#28277d' : 'white')};
   border-radius: 5px;
   cursor: default;
   transition: 0.3s;
+  background-color: ${({ isCheck }) => (isCheck ? '#28277d' : 'white')};
 `;
 
 const CheckBox = styled.button`
@@ -118,6 +118,7 @@ const TextInput = styled.input.attrs({
   padding-left: 5px;
   margin: 0 20px;
   box-shadow: 0 1px 2px 1px #0000001f;
+  background-color: #fff;
   height: 30px;
   border-radius: 5px;
 `;
