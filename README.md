@@ -1,7 +1,6 @@
 <p align='middle'>
-<a href='https://'><img src='https://paywork.io/images/logo-dark.png' width="100px;" alt="LiveMD" /></a></p>
-
-## 배포주소
+<a href='https://paywork.io/'><img src='https://paywork.io/images/logo-dark.png' width="700px;" alt="LiveMD" /></a></p>
+<h1 align='middle'><a href='https://paywork.netlify.app/'>https://paywork.netlify.app/</a></h1>
 
 ## 📌 프로젝트 소개
 
