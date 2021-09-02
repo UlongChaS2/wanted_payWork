@@ -1,12 +1,23 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store/reducers';
+import { loadTasks } from 'store/actions/serviceTasks';
 import { tasks } from 'types';
 import TodoItem from 'components/TodoItem';
 import styled from 'styled-components';
 
 export default function TodoList() {
   const taskList = useSelector<RootState, tasks>((state) => state.serviceTasks);
+  const dispatch = useDispatch();
+  const handleLoadRequest = useCallback(
+    () => dispatch(loadTasks()),
+    [dispatch]
+  );
+
+  useEffect(() => {
+    handleLoadRequest();
+  }, [handleLoadRequest]);
+  // console.log(taskList);
   return (
     <Container>
       <Wrap>
