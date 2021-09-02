@@ -34,6 +34,10 @@ http://dummy-server.io/
 
 <br/>
 
+<p  align='middle'>
+<img width="700" alt="구현 동영상" src="https://user-images.githubusercontent.com/62024139/131848877-79db7d69-179d-4598-ac86-be75c46a0e77.gif">
+</p>
+        
 ## 구현 목록
 
 - [x] 사용자 눈에 편한 UI 레이아웃 구성
