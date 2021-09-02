@@ -1,5 +1,11 @@
 import { AnyAction } from 'redux';
-import { ADD_TASK, CHECK_TASK, EDIT_TASK, REMOVE_TASK } from '../actions/types';
+import {
+  ADD_TASK,
+  CHECK_TASK,
+  EDIT_TASK,
+  LOAD_TASKS,
+  REMOVE_TASK,
+} from '../actions/types';
 import { tasks } from 'types';
 
 const initialState: tasks = {
@@ -22,6 +28,7 @@ const serviceTasks = (state = initialState, action: AnyAction): tasks => {
       };
     case REMOVE_TASK:
       return {
+        ...state,
         list: state.list.filter((task) => task.id !== action.payload),
       };
     case EDIT_TASK:
@@ -41,7 +48,11 @@ const serviceTasks = (state = initialState, action: AnyAction): tasks => {
             : task
         ),
       };
-
+    case LOAD_TASKS:
+      return {
+        ...state,
+        list: [action.payload],
+      };
     default:
       return state;
   }
