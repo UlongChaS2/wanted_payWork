@@ -1,4 +1,5 @@
-# 모두컴퍼니
+<p align='middle'>
+<a href='https://'><img src='https://paywork.io/images/logo-dark.png' width="100px;" alt="LiveMD" /></a></p>
 
 ## 배포주소
 
@@ -43,7 +44,7 @@ http://dummy-server.io/
 
 ## 아쉬운 부분
 
-- [] Redux-saga가 익숙지 않고 Mock server 이용으로 POST 기능을 하지 못함
+- [ ] Redux-saga가 익숙지 않고 Mock server 이용으로 POST 기능을 하지 못함
 
 <br/>
 
