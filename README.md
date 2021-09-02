@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# 모두컴퍼니
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 배포주소
 
-## Available Scripts
+## 📌 프로젝트 소개
 
-In the project directory, you can run:
+<p>
+<img src="https://img.shields.io/github/languages/top/UlongChaS2/wanted_paywork?color=blue&logo=typescript"> </img>
+<img src="https://img.shields.io/github/repo-size/UlongChaS2/wanted_paywork?color=%23&logo=Github"> </img>
 
-### `npm start`
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 📋 프리온보딩 코스 페이워크 기업과제
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> TypeScript와 Redux, Redux-saga로 To do List 프로젝트 구현
 
-### `npm test`
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+    <summary><STRONG>
+    📚 과제 요구사항 보기
+    <STRONG></summary>
 
-### `npm run build`
+#### **세부 가이드**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Base URL (해당 서버 주소는 작동하지 않는 서버입니다)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```jsx
+http://dummy-server.io/
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 주어진 서버로 추가, 삭제, 수정, 상태 체크를 HTTP 메소드와 RESTful API를 이용하여 구현
+</details>
 
-### `npm run eject`
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 구현 목록
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [x] 사용자 눈에 편한 UI 레이아웃 구성
+- [x] 밋밋할 수 있는 스타일을 box-shadow로 입체감을 부여
+- [x] Redux로 이용한 추가, 삭제, 수정, 상태 체크 기능
+- [x] Redux-saga로 Mock server를 이용해 HTTP method로 응답, 요청
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 아쉬운 부분
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [] Redux-saga가 익숙지 않고 Mock server 이용으로 POST 기능을 하지 못함
 
-## Learn More
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 👨‍💻 실행 방법
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 설치
 
-### Code Splitting
+`npm install`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 실행
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`npm start`
